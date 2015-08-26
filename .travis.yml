@@ -9,16 +9,16 @@ install:
   - npm install
   - popd
   - sudo authorize_ios
-  - appium --full-reset --log /var/tmp/appium.log --show-sim-log &
+  - appium --full-reset --log appium.log --show-sim-log &
 
 script:
   - pushd sample-code/examples/node/
   - mocha ios-simple.js
   - popd
-  - cat /var/tmp/appium.log
+  - cat appium.log
   
 after_script:
-  - cat /var/tmp/appium.log
+  - cat appium.log
 
 after_failure:
-  - cat /var/tmp/appium.log
+  - cat appium.log
