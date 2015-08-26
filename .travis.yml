@@ -10,7 +10,8 @@ install:
   - sudo authorize_ios
   - pushd sample-code/examples/node/
   - npm install
-  - appium --full-reset --log appium.log --show-sim-log
+  - appium --full-reset --log appium.log --show-sim-log &
+  - sleep 60
   - popd
 
 script:
