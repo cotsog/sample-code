@@ -3,13 +3,15 @@ osx_image: xcode6.4
 sudo: true
 
 install:
-  - npm install -g appium
   - npm install -g mocha
+  - npm install -g appium
+  - appium -v
+  - appium-doctor --ios
+  - sudo authorize_ios
   - pushd sample-code/examples/node/
   - npm install
+  - appium --full-reset --log appium.log --show-sim-log
   - popd
-  - sudo authorize_ios
-  - appium --full-reset --log appium.log --show-sim-log &
 
 script:
   - pushd sample-code/examples/node/
