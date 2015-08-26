@@ -1,18 +1,16 @@
+language: objective-c
+osx_image: xcode6.4
+sudo: true
+
 install:
   - npm install -g appium
   - npm install -g mocha
   - pushd sample-code/examples/node/
   - npm install
   - popd
-
-before_script:
-  - appium &
+  - appium --full-reset &
 
 script:
   - pushd sample-code/examples/node/
   - mocha ios-simple.js
   - popd
-
-language: objective-c
-osx_image: xcode6.4
-sudo: true
