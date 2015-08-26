@@ -8,9 +8,12 @@ install:
   - pushd sample-code/examples/node/
   - npm install
   - popd
-  - appium --full-reset &
+  - appium --full-reset --log /var/tmp/appium.log &
 
 script:
   - pushd sample-code/examples/node/
   - mocha ios-simple.js
   - popd
+
+after_failure:
+  - cat /var/tmp/appium.log
