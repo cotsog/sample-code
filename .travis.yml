@@ -11,7 +11,9 @@ before_script:
   - appium &
 
 script:
+  - pushd sample-code/examples/node/
   - mocha ios-simple.js
+  - popd
 
 language: objective-c
 osx_image: xcode6.4
