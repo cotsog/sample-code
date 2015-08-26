@@ -12,3 +12,7 @@ before_script:
 
 script:
   - mocha ios-simple.js
+
+language: objective-c
+osx_image: xcode6.4
+sudo: true
