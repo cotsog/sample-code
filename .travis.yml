@@ -14,6 +14,10 @@ script:
   - pushd sample-code/examples/node/
   - mocha ios-simple.js
   - popd
+  - cat /var/tmp/appium.log
+  
+after_script:
+  - cat /var/tmp/appium.log
 
 after_failure:
   - cat /var/tmp/appium.log
