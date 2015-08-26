@@ -8,6 +8,7 @@ install:
   - pushd sample-code/examples/node/
   - npm install
   - popd
+  - sudo authorize_ios
   - appium --full-reset --log /var/tmp/appium.log &
 
 script:
