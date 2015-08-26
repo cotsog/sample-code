@@ -1,0 +1,14 @@
+before_install:
+  - npm install -g appium
+  - npm install -g mocha
+  
+install:
+  - pushd sample-code/examples/node/
+  - npm install
+  - popd
+
+before_script:
+  - appium &
+
+script:
+  - mocha ios-simple.js
