@@ -11,7 +11,7 @@ install:
   - npm install -g appium
   - appium -v
   - appium-doctor --ios
-  - sudo authorize_ios
+  - as_current_user authorize_ios
   - pushd sample-code/examples/node/
   - npm install
   - appium --full-reset --log appium.log &
@@ -20,7 +20,7 @@ install:
 
 script:
   - pushd sample-code/examples/node/
-  - sudo mocha ios-simple.js
+  - as_current_user mocha ios-simple.js
   - popd
   - cat appium.log
   
