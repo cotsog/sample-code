@@ -20,7 +20,7 @@ install:
 
 script:
   - pushd sample-code/examples/node/
-  - mocha ios-simple.js
+  - sudo mocha ios-simple.js
   - popd
   - cat appium.log
   
