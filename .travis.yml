@@ -10,8 +10,9 @@ install:
   - npm install -g mocha
   - npm install -g appium
   - appium -v
-  - as_current_user appium-doctor --ios
-  - as_current_user authorize_ios
+  - chmod +x ./as_current_user
+  - ./as_current_user "appium-doctor --ios"
+  - ./as_current_user "authorize_ios"
   - pushd sample-code/examples/node/
   - npm install
   - appium --full-reset --log appium.log &
@@ -20,7 +21,7 @@ install:
 
 script:
   - pushd sample-code/examples/node/
-  - as_current_user mocha ios-simple.js
+  - ./as_current_user "mocha ios-simple.js"
   - popd
   - cat appium.log
   
