@@ -21,7 +21,7 @@ install:
 
 script:
   - pushd sample-code/examples/node/
-  - ./as_current_user "mocha ios-simple.js"
+  - ../../../as_current_user "mocha ios-simple.js"
   - popd
   - cat appium.log
   
