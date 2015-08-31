@@ -23,8 +23,6 @@ install:
   - popd
 
 script:
-  - echo "***** sleeping 5 minutes do to some stuff *****"
-  - sleep 300
   - pushd sample-code/examples/node/
   - ../../../as_current_user "mocha ios-simple.js"
   - popd
