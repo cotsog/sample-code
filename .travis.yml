@@ -14,6 +14,8 @@ install:
   - chmod +x ./as_current_user
   - appium-doctor --ios
   - sudo authorize_ios
+  - chmod +x instruments-auth.sh
+  - ./instruments-auth.sh
   - pushd sample-code/examples/node/
   - npm install
   - appium --full-reset --log appium.log &
