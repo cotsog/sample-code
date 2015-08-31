@@ -1,6 +1,6 @@
 #trigger
 language: objective-c
-osx_image: xcode6.4
+osx_image: beta-xcode6.3
 sudo: true
 
 cache:
@@ -15,7 +15,7 @@ install:
   - appium-doctor --ios
   - sudo authorize_ios
   - chmod +x instruments-auth.sh
-  - ./instruments-auth.sh
+  # - ./instruments-auth.sh
   - pushd sample-code/examples/node/
   - npm install
   - appium --full-reset --log appium.log &
